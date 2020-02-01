@@ -41,11 +41,7 @@ type requestSchema struct {
 }
 
 type requestRecord struct {
-	// id int `json:"id"`
-	Date string `json:"t_date"`
-	// t_start string `json:"t_start"`
-	// t_end string `json:"t_end"`
-	// t_type int `json:`
+	Date   string `json:"t_date"`
 	Number string `json:"t_no"`
 }
 
