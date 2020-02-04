@@ -6,7 +6,7 @@ import (
 	"github.com/jessevdk/go-flags"
 )
 
-type ProgramArgs struct {
+type programArgs struct {
 	Date   string `short:"d" long:"date" description:"Date of your travel"`
 	Number string `short:"n" long:"number" description:"Flight/Train number"`
 	List   bool   `short:"l" long:"list" description:"List all watching records"`
@@ -14,8 +14,8 @@ type ProgramArgs struct {
 	Delete bool   `short:"x" long:"delete" description:"Delete a travel record"`
 }
 
-func parseArgs() ProgramArgs {
-	var args ProgramArgs
+func parseArgs() programArgs {
+	var args programArgs
 
 	_, err := flags.Parse(&args)
 	if err != nil {
