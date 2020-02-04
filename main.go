@@ -1,10 +1,9 @@
 package main
 
 func main() {
-	if isRegister() {
-		register()
+	if isCheck() {
 		check()
 	} else {
-		check()
+		manageWatchList()
 	}
 }

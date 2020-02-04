@@ -1,30 +1,36 @@
 package main
 
 import (
-	"os"
 	"regexp"
 
 	"github.com/jessevdk/go-flags"
 )
 
-func isRegister() bool {
-	return len(os.Args) != 1
+type ProgramArgs struct {
+	Date   string `short:"d" long:"date" description:"Date of your travel"`
+	Number string `short:"n" long:"number" description:"Flight/Train number"`
+	List   bool   `short:"l" long:"list" description:"List all watching records"`
+	Add    bool   `short:"a" long:"add" description:"Add a travel record"`
+	Delete bool   `short:"x" long:"delete" description:"Delete a travel record"`
 }
 
-func parseInfo() TrafficInfo {
-	var opts struct {
-		Date   string `short:"d" long:"date" description:"Date of your travel"`
-		Number string `short:"n" long:"number" description:"Flight/Train number"`
-	}
+func parseArgs() ProgramArgs {
+	var args ProgramArgs
 
-	_, err := flags.Parse(&opts)
+	_, err := flags.Parse(&args)
 	if err != nil {
 		panic(err)
 	}
 
+	return args
+}
+
+func parseInfo() TrafficInfo {
+	args := parseArgs()
+
 	i := TrafficInfo{
-		Date:   parseDate(opts.Date),
-		Number: opts.Number,
+		Date:   parseDate(args.Date),
+		Number: args.Number,
 	}
 
 	return i
