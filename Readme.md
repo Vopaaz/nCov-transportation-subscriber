@@ -3,7 +3,7 @@
 新型冠状病毒患者同行**订阅**查询工具。现有工具只能对每一班次进行手动查询，每天查询时输入信息比较麻烦。
 此工具可以订阅航班/列车班次等，每次进行查询无需重复输入。
 
-WuHan coronavirus transportation subscriber. MOst other tools only supports manual querying, where inputting the date and flight number can be troublesome.
+WuHan coronavirus transportation subscriber. Most other tools only supports manual querying, where inputting the date and flight number can be troublesome.
 This tool enables you to subscribe a flight/train. After that you will not need to input that again.
 
 
